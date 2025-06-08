@@ -1,0 +1,22 @@
+{
+  "name": "reactapp",
+  "version": "1.0.0",
+  "description": "My first react app",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rkreddy12345/ReactApp.git"
+  },
+  "author": "Radha Krishna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rkreddy12345/ReactApp/issues"
+  },
+  "homepage": "https://github.com/rkreddy12345/ReactApp#readme",
+  "devDependencies": {
+    "parcel": "^2.15.2"
+  }
+}
