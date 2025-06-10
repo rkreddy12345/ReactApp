@@ -1,9 +1,9 @@
 {
   "name": "reactapp",
   "version": "1.0.0",
-  "description": "My first react app",
-  "main": "App.js",
+  "description": "This is my first react app",
   "scripts": {
+    "start": "parcel index.html",
     "test": "jest"
   },
   "repository": {
@@ -18,5 +18,12 @@
   "homepage": "https://github.com/rkreddy12345/ReactApp#readme",
   "devDependencies": {
     "parcel": "^2.15.2"
-  }
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "browserlist": [
+    "last two versions"
+  ]
 }
