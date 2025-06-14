@@ -5,32 +5,54 @@ import ReactDOM from "react-dom/client";
  * for prod build: npx parcel build index.html
  */
 
-const heading1 = (
-    <h1 id="title" key="h1">
-        Namaste everyone! from h1
-    </h1>
+const Title = () => (
+    <a href="/">
+        <img alt="logo" className="logo"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpbS295BL3xdJwXWwh7cTytVNtCwa-0r5TI9UviYdDmsnDk15ovoj2HcZlusgDiYkuo4o&usqp=CAU"
+        />
+    </a>
 );
 
 
-//Functional Component
-const Heading = () => {
+const Header = () => {
     return (
-        <div>
-            {heading1}
-            <h2>
-                Namaste everyone! from h2
-            </h2>
-            <Heading3 />
+        <div className="header">
+            <Title />
+            <div className="nav-items">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                    <li>Cart</li>
+                </ul>
+            </div>
         </div>
-    )
-};
 
-const Heading3 = () => {
-    return (
-        <h3>
-            Namaste everyone! from h3
-        </h3>
     )
-};
+}
+
+const Body = () => {
+    return (
+        <h4>body</h4>
+    )
+}
+
+const Footer = () => {
+    return (
+        <h4>footer</h4>
+    )
+}
+
+const AppLayout = () => {
+    return (
+        <>
+            <Header />
+            <Body />
+            <Footer />
+        </>
+    )
+}
+
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Heading />);
+root.render(<AppLayout />);
