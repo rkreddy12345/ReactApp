@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { restaurants } from "../config";
 import RestaurantCard from "./RestaurantCard";
 
@@ -7,17 +7,25 @@ function filterRestaurants(searchInput, restaurants) {
 }
 
 const Body = () => {
-    const [filteredRestaurants, setFilteredRestaurants] = useState(restaurants);
+    const [filteredRestaurants, setFilteredRestaurants] = useState([]);
     const [searchInput, setSearchInput] = useState("");
+
+    useEffect(() => {
+        fetchRestaurants();
+    }, []);
+
+    async function fetchRestaurants() {
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.4399183&lng=78.4360986&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const jsonData = await data.json();
+        setFilteredRestaurants(jsonData.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
+    }
 
     return (
         <>
             <div className="search-container">
                 <input type="text" className="search-input" placeholder="search for restaurant" value={searchInput}
                     onChange={
-                        (e) => {
-                            setSearchInput(e.target.value);
-                        }
+                        (e) => setSearchInput(e.target.value)
                     } />
                 <button className="search-btn"
                     onClick={() => {
